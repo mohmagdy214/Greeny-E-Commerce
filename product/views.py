@@ -6,6 +6,7 @@ from .models import Product , ProductImages , Brand , Review
 class ProductList(ListView):
     model = Product
 
+
 class ProductDetail(DetailView):
     model = Product
 
@@ -15,3 +16,5 @@ class ProductDetail(DetailView):
         context["related_products"] = Product.objects.filter(brand=self.get_object().brand)
         return context
     
+class BrandList(ListView):
+    model = Brand
