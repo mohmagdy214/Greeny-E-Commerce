@@ -30,8 +30,8 @@ def seed_product(n):
             price = round(random.uniform(20.99,999.99),2),
             sku = random.randint(1000,1000000),
             subtitle = fake.text(max_nb_chars=250),
-            description = fake.text(max_nb_chars=20000),
-            quantity = random.randint(0,100),
+            description = fake.text(max_nb_chars=1000),
+            quantity = random.randint(0,50),
             brand = Brand.objects.get(id=random.randint(1,160)),
         )
     print(f'seed {n} Products Successfully')
