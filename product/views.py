@@ -6,9 +6,9 @@ from django.db.models.aggregates import Min , Max , Count , Avg , Sum
 # Create your views here.
 
 def queryset_debug(request):
-    # queryset_api s
+    # queryset_api_methods
 
-    # data = Product.objects.select_related('brand').all()             # prefetch_related = many-to-many
+    data = Product.objects.select_related('brand').all()              # prefetch_related = many-to-many
     # data = Product.objects.filter(price__gt = 100)                 # greater than
     # data = Product.objects.filter(price__gte = 100)               # greater than or equal
     # data = Product.objects.filter(price__lt = 100)                 # less than 
@@ -75,8 +75,6 @@ def queryset_debug(request):
     # data = Product.objects.annotate(is_new=Value(True))
     # data = Product.objects.annotate(price_with_tax=F('price')*1.5)
 
-
-
     return render(request , 'product/debug.html' , {'data':data})
 
 
@@ -99,8 +97,14 @@ class ProductDetail(DetailView):
 
 
 
+
+
+
 class BrandList(ListView):
     model = Brand
+    queryset = Brand.objects.annotate(product_count=Count('product_brand'))
+
+
 
 
 
@@ -110,12 +114,12 @@ class BrandDetail(ListView):
     paginate_by = 20
 
     def get_queryset(self):
-        brand = Brand.objects.get(slug=self.kwargs['slug'])
+        brand = Brand.objects.get(slug=self.kwargs['slug']) # overide query
         return super().get_queryset().filter(brand=brand) # Product query->(product.brand=brand*this one up*) 
     
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["brand"] = Brand.objects.get(slug=self.kwargs['slug'])
+        context["brand"] = Brand.objects.filter(slug=self.kwargs['slug']).annotate(product_count=Count('product_brand'))[0]
         return context
     
