@@ -6,10 +6,13 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>
+    Debug Page
+    </h1>
     <ul>
         {% for item in data %}
         <li>
-            {{item}} 
+            {{item}} - {{item.price}}
         </li>
         {% endfor %}
     </ul>
