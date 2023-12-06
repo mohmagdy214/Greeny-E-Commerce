@@ -77,7 +77,7 @@
                 <ul class="suggest-slider slider-arrow">
                 {% for brand in brands %}
                     <li>
-                        <a class="suggest-card" href="shop-4column.html">
+                        <a class="suggest-card" href="products/brands/{{brand.slug}}">
                             <img src="{{brand.image.url}}" style="height:150px;width:215px" alt="suggest">
                             <h5>{{brand}} <span>{{brand.product_count}} items</span></h5>
                         </a>
@@ -133,7 +133,7 @@
                                     <a href="">({{product.review_product.all|length}})</a>
                                 </div>
                                 <h6 class="product-name">
-                                    <a href="product-video.html">{{product}}</a>
+                                    <a href="products/{{product.slug}}">{{product}}</a>
                                 </h6>
                                 <h6 class="product-price">
                                     <span>{{product.price}} EP</span>
@@ -204,7 +204,7 @@
                             </div>
                             <div class="feature-content">
                                 <h6 class="feature-name">
-                                    <a href="product-video.html">{{product}}</a>
+                                    <a href="products/{{product.slug}}">{{product}}</a>
                                 </h6>
                                 <div class="feature-rating">
                                     <i class="icofont-star {% if product.avg_rate > 0 %}active{% endif %}"></i>
@@ -294,7 +294,7 @@
                                             <a href="">({{product.review_product.all|length}})</a>
                                         </div>
                                         <h6 class="product-name">
-                                            <a href="product-video.html">{{product}}</a>
+                                            <a href="products/{{product.slug}}">{{product}}</a>
                                         </h6>
                                         <h6 class="product-price">
                                             <span>{{product.price}} EP</span>
