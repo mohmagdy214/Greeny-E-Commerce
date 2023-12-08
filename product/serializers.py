@@ -1,19 +1,11 @@
 from rest_framework import serializers
-from .models import Product , Brand
+from .models import Product , Brand , Review
 from django.db.models.aggregates import Avg 
 
 
 
 
-class BrandListSerialzer(serializers.ModelSerializer):
-    class Meta:
-        model = Brand
-        fields = '__all__'
-
-
-
-
-class ProductListSerialzer(serializers.ModelSerializer):
+class ProductListSerializer(serializers.ModelSerializer):
     brand = serializers.StringRelatedField()
     avg_rate = serializers.SerializerMethodField()
     reviews_count = serializers.SerializerMethodField()
@@ -35,11 +27,18 @@ class ProductListSerialzer(serializers.ModelSerializer):
 
 
 
+class ReviewSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Review
+        fields = '__all__'
 
-class ProductDetailSerialzer(serializers.ModelSerializer):
+
+
+class ProductDetailSerializer(serializers.ModelSerializer):
     brand = serializers.StringRelatedField()
     avg_rate = serializers.SerializerMethodField()
     reviews_count = serializers.SerializerMethodField()
+    reviews = ReviewSerializer(source='review_product',many=True)
 
     class Meta:
         model = Product
@@ -58,9 +57,15 @@ class ProductDetailSerialzer(serializers.ModelSerializer):
 
 
 
+class BrandListSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Brand
+        fields = '__all__'
 
-class BrandDetailSerialzer(serializers.ModelSerializer):
-    products = ProductListSerialzer(source='product_brand',many=True)
+
+
+class BrandDetailSerializer(serializers.ModelSerializer):
+    products = ProductListSerializer(source='product_brand',many=True)
     class Meta:
         model = Brand
         fields = '__all__'
