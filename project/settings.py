@@ -42,10 +42,13 @@ INSTALLED_APPS = [
     "debug_toolbar",
     'rest_framework',
     'django_filters',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account', 
     'rest_framework.authtoken',
     'rest_framework_simplejwt',
     'dj_rest_auth',
-
+    'dj_rest_auth.registration',
 
     'product',
     'settings',
@@ -72,6 +75,7 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
     "debug_toolbar.middleware.DebugToolbarMiddleware",
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -81,6 +85,10 @@ MIDDLEWARE = [
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
+
+
+SITE_ID = 1
+
 
 ROOT_URLCONF = 'project.urls'
 
@@ -167,3 +175,6 @@ REST_AUTH = {
     'USE_JWT': True,
     'JWT_AUTH_COOKIE': 'jwt-auth',
 }
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
