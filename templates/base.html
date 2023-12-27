@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -33,24 +32,21 @@
         <link rel="icon" href="images/favicon.png">
 
         <!-- FONTS -->
-        <link rel="stylesheet" href="{% static 'en/fonts/flaticon/flaticon.css' %}">
-        <link rel="stylesheet" href="{% static 'en/fonts/icofont/icofont.min.css' %}">
-        <link rel="stylesheet" href="{% static 'en/fonts/fontawesome/fontawesome.min.css' %}">
+        <link rel="stylesheet" href="{% static "en/fonts/flaticon/flaticon.css" %}">
+        <link rel="stylesheet" href="{% static "en/fonts/icofont/icofont.min.css" %}">
+        <link rel="stylesheet" href="{% static "en/fonts/fontawesome/fontawesome.min.css" %}">
 
         <!-- VENDOR -->
-        <link rel="stylesheet" href="{% static 'en/vendor/venobox/venobox.min.css' %}">
-        <link rel="stylesheet" href="{% static 'en/vendor/slickslider/slick.min.css' %}">
-        <link rel="stylesheet" href="{% static 'en/vendor/niceselect/nice-select.min.css' %}">
-        <link rel="stylesheet" href="{% static 'en/vendor/bootstrap/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static "en/vendor/venobox/venobox.min.css" %}">
+        <link rel="stylesheet" href="{% static "en/vendor/slickslider/slick.min.css" %}">
+        <link rel="stylesheet" href="{% static "en/vendor/niceselect/nice-select.min.css" %}">
+        <link rel="stylesheet" href="{% static "en/vendor/bootstrap/bootstrap.min.css" %}">
 
         <!-- CUSTOM -->
-        
-        <link rel="stylesheet" href="{% static 'en/css/main.css' %}">
-
-        {% block css %}
-        <link rel="stylesheet" href="{% static 'en/css/index.css' %}">
-        {% endblock css %}
-
+        <link rel="stylesheet" href="{% static "en/css/main.css" %}">
+        {% block CSS %}
+            <link rel="stylesheet" href="{% static "en/css/index.css" %}">
+        {% endblock CSS %}
         <!--=====================================
                     CSS LINK PART END
         =======================================-->
@@ -122,7 +118,6 @@
                         <input type="text" placeholder="Search anything...">
                         <button><i class="fas fa-search"></i></button>
                     </form>
-
                     <div class="header-widget-group">
                         <a href="wishlist.html" class="header-widget" title="Wishlist">
                             <i class="fas fa-heart"></i>
@@ -152,16 +147,19 @@
                         <div class="navbar-content">
                             <ul class="navbar-list">
                                 <li class="navbar-item">
-                                    <a class="navbar-link" href="/">Home</a>
+                                    <a class="navbar-link" href="/">home</a>
+                                </li>
+                                <li class="navbar-item dropdown-megamenu">
+                                    <a class="navbar-link" href="/products">shop</a>
                                 </li>
                                 <li class="navbar-item">
-                                    <a class="navbar-link" href="/products">Shop</a>
+                                    <a class="navbar-link" href="/products/brands/">brands</a>
                                 </li>
                                 <li class="navbar-item">
-                                    <a class="navbar-link" href="/products/brands/">Brands</a>
+                                    <a class="navbar-link" href="/orders">orders</a>
                                 </li>
                                 <li class="navbar-item">
-                                    <a class="navbar-link" href="/orders">Orders</a>
+                                    <a class="navbar-link" href="/blogs">blog</a>
                                 </li>
                             </ul>
                             <div class="navbar-info-group">
@@ -748,13 +746,9 @@
                     PRODUCT VIEW END
         =======================================-->
 
+                {% block body %}
 
-
-    {% block body %}
-
-    {% endblock body %}
-
-
+                {% endblock body %}
 
         <!--=====================================
                     INTRO PART START
@@ -825,13 +819,13 @@
                             <a class="footer-logo" href="#">
                                 <img src="{{company_data.logo.url}}" alt="logo">
                             </a>
-                            <p class="footer-desc">{{company_data.subtitle}}</p>
+                            <p class="footer-desc">{{company_data.subtitle}}.</p>
                             <ul class="footer-social">
                                 <li><a class="icofont-facebook" href="{{company_data.facebook_link}}"></a></li>
                                 <li><a class="icofont-twitter" href="{{company_data.twitter_link}}"></a></li>
-                                <li><a class="icofont-linkedin" href="#"></a></li>
-                                <li><a class="icofont-instagram" href="#"></a></li>
-                                <li><a class="icofont-pinterest" href="#"></a></li>
+                                <li><a class="icofont-linkedin" href="{{company_data.linkedin_link}}"></a></li>
+                                <li><a class="icofont-instagram" href="{{company_data.instgram_link}}"></a></li>
+                                <li><a class="icofont-pinterest" href="{{company_data.pinterest_link}}"></a></li>
                             </ul>
                         </div>
                     </div>
@@ -914,23 +908,29 @@
                     JS LINK PART START
         =======================================-->
         <!-- VENDOR -->
-        <script src="{% static 'en/vendor/bootstrap/jquery-1.12.4.min.js' %}"></script>
-        <script src="{% static 'en/vendor/bootstrap/popper.min.js' %}"></script>
-        <script src="{% static 'en/vendor/bootstrap/bootstrap.min.js' %}"></script>
-        <script src="{% static 'en/vendor/countdown/countdown.min.js' %}"></script>
-        <script src="{% static 'en/vendor/niceselect/nice-select.min.js' %}"></script>
-        <script src="{% static 'en/vendor/slickslider/slick.min.js' %}"></script>
-        <script src="{% static 'en/vendor/venobox/venobox.min.js' %}"></script>
+        <script src="{% static "en/vendor/bootstrap/jquery-1.12.4.min.js" %}"></script>
+        <script src="{% static "en/vendor/bootstrap/popper.min.js" %}"></script>
+        <script src="{% static "en/vendor/bootstrap/bootstrap.min.js" %}"></script>
+        <script src="{% static "en/vendor/countdown/countdown.min.js" %}"></script>
+        <script src="{% static "en/vendor/niceselect/nice-select.min.js" %}"></script>
+        <script src="{% static "en/vendor/slickslider/slick.min.js" %}"></script>
+        <script src="{% static "en/vendor/venobox/venobox.min.js" %}"></script>
 
         <!-- CUSTOM -->
-        <script src="{% static 'en/js/nice-select.js' %}"></script>
-        <script src="{% static 'en/js/countdown.js' %}"></script>
-        <script src="{% static 'en/js/accordion.js' %}"></script>
-        <script src="{% static 'en/js/venobox.js' %}"></script>
-        <script src="{% static 'en/js/slick.js' %}"></script>
-        <script src="{% static 'js/main.js' %}"></script> 
+        <script src="{% static "en/js/nice-select.js" %}"></script>
+        <script src="{% static "en/js/countdown.js" %}"></script>
+        <script src="{% static "en/js/accordion.js" %}"></script>
+        <script src="{% static "en/js/venobox.js" %}"></script>
+        <script src="{% static "en/js/slick.js" %}"></script>
+        <script src="{% static "en/js/main.js" %}"></script> 
         <!--=====================================
                     JS LINK PART END
         =======================================-->
     </body>
 </html>
+
+
+
+
+
+
