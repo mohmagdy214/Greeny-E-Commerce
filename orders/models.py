@@ -62,7 +62,7 @@ class OrderDetail(models.Model):
     order = models.ForeignKey(Order,related_name='order_detail',on_delete=models.CASCADE)
     product = models.ForeignKey(Product,related_name='order_product',on_delete=models.SET_NULL,null=True,blank=True)
     price = models.FloatField()
-    qunatity = models.IntegerField()
+    quantity = models.IntegerField()
     total = models.FloatField(null=True,blank=True)
 
     def __str__(self):
