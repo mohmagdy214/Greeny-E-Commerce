@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-30 14:51+0200\n"
+"POT-Creation-Date: 2024-01-30 17:28+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,6 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
 #: .\product\models.py:17 .\product\models.py:60
 msgid "Name"
 msgstr "الاسم"
@@ -73,3 +74,95 @@ msgstr "التقييم"
 #: .\product\models.py:79
 msgid "Created_at"
 msgstr "تاريخ الانشاء"
+
+#: .\templates\base.html:95
+msgid "offers"
+msgstr "العروض"
+
+#: .\templates\base.html:96
+msgid "need help"
+msgstr "للمساعدة"
+
+#: .\templates\base.html:97 .\templates\base.html:443
+msgid "contact us"
+msgstr "اتصل بنا"
+
+#: .\templates\base.html:141
+msgid "total price"
+msgstr "السعر الكلي"
+
+#: .\templates\base.html:162
+msgid "Home"
+msgstr "الصفحة الرئيسية"
+
+#: .\templates\base.html:165
+msgid "Shop"
+msgstr "التسوق"
+
+#: .\templates\base.html:168
+msgid "Brands"
+msgstr "الماركات"
+
+#: .\templates\base.html:171
+msgid "Orders"
+msgstr "الطلبات"
+
+#: .\templates\base.html:179
+msgid "call us"
+msgstr "اتصل بنا"
+
+#: .\templates\base.html:186
+msgid "email us"
+msgstr "الاميل الخاص بنا"
+
+#: .\templates\base.html:466
+msgid "quick Links"
+msgstr "لينكات سريعة"
+
+#: .\templates\base.html:469
+msgid "My Account"
+msgstr "حسابي"
+
+#: .\templates\base.html:470
+msgid "Order History"
+msgstr "تاريخ الطلب"
+
+#: .\templates\base.html:471
+msgid "Order Tracking"
+msgstr "تعقب الطلب"
+
+#: .\templates\base.html:472
+msgid "Best Seller"
+msgstr "الافضل مبيعا"
+
+#: .\templates\base.html:473
+msgid "New Arrivals"
+msgstr "New Arrivals"
+
+#: .\templates\base.html:476
+msgid "Location"
+msgstr "الموقع"
+
+#: .\templates\base.html:477
+msgid "Affiliates"
+msgstr "Affiliates"
+
+#: .\templates\base.html:478
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+#: .\templates\base.html:479
+msgid "Carrer"
+msgstr "Carrer"
+
+#: .\templates\base.html:480
+msgid "Faq"
+msgstr "FAQ"
+
+#: .\templates\base.html:487
+msgid "Download App"
+msgstr "تحميل التطبيق"
+
+#: .\templates\base.html:499
+msgid "@ All Copyrights Reserved by"
+msgstr "كل الحقوق محفوظة @"

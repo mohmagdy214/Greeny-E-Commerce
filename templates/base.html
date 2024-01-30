@@ -34,21 +34,23 @@
         <link rel="icon" href="images/favicon.png">
 
         <!-- FONTS -->
-        <link rel="stylesheet" href="{% static "en/fonts/flaticon/flaticon.css" %}">
-        <link rel="stylesheet" href="{% static "en/fonts/icofont/icofont.min.css" %}">
-        <link rel="stylesheet" href="{% static "en/fonts/fontawesome/fontawesome.min.css" %}">
+        <link rel="stylesheet" href="{% static 'en/fonts/flaticon/flaticon.css' %}">
+        <link rel="stylesheet" href="{% static 'en/fonts/icofont/icofont.min.css' %}">
+        <link rel="stylesheet" href="{% static 'en/fonts/fontawesome/fontawesome.min.css' %}">
 
         <!-- VENDOR -->
-        <link rel="stylesheet" href="{% static "en/vendor/venobox/venobox.min.css" %}">
-        <link rel="stylesheet" href="{% static "en/vendor/slickslider/slick.min.css" %}">
-        <link rel="stylesheet" href="{% static "en/vendor/niceselect/nice-select.min.css" %}">
-        <link rel="stylesheet" href="{% static "en/vendor/bootstrap/bootstrap.min.css" %}">
+        <link rel="stylesheet" href="{% static 'en/vendor/venobox/venobox.min.css' %}">
+        <link rel="stylesheet" href="{% static 'en/vendor/slickslider/slick.min.css' %}">
+        <link rel="stylesheet" href="{% static 'en/vendor/niceselect/nice-select.min.css' %}">
+        <link rel="stylesheet" href="{% static 'en/vendor/bootstrap/bootstrap.min.css' %}">
 
         <!-- CUSTOM -->
-        <link rel="stylesheet" href="{% static "en/css/main.css" %}">
-        {% block CSS %}
-            <link rel="stylesheet" href="{% static "en/css/index.css" %}">
-        {% endblock CSS %}
+        
+        <link rel="stylesheet" href="{% static 'en/css/main.css' %}">
+
+        {% block css %}
+        <link rel="stylesheet" href="{% static 'en/css/index.css' %}">
+        {% endblock css %}
         <!--=====================================
                     CSS LINK PART END
         =======================================-->
@@ -830,7 +832,7 @@
             </div>
         </footer>
         <!--=====================================
-                      FOOTER PART END
+                    FOOTER PART END
         =======================================-->
         
 
@@ -858,9 +860,3 @@
         =======================================-->
     </body>
 </html>
-
-
-
-
-
-
