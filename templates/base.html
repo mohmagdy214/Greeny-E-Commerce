@@ -67,7 +67,7 @@
                 <div class="row">
                     <div class="col-md-12 col-lg-5">
                         <div class="header-top-welcome">
-                            <p>Welcome to Ecomart in Your Dream Online Store!</p>
+                            <p>DIDI</p>
                         </div>
                     </div>
                     <div class="col-md-5 col-lg-3">
@@ -94,9 +94,9 @@
                     </div>
                     <div class="col-md-7 col-lg-4">
                         <ul class="header-top-list">
-                            <li><a href="offer.html">offers</a></li>
-                            <li><a href="faq.html">need help</a></li>
-                            <li><a href="contact.html">contact us</a></li>
+                            <li><a href="offer.html">{% translate "offers" %}</a></li>
+                            <li><a href="faq.html">{% translate "need help" %}</a></li>
+                            <li><a href="contact.html">{% translate "contact us" %}</a></li>
                         </ul>
                     </div>
                 </div>
@@ -140,7 +140,7 @@
                         <button class="header-widget header-cart" title="Cartlist">
                             <i class="fas fa-shopping-basket"></i>
                             <sup>{{cart_detail_data|length}}    </sup>
-                            <span>total price<small>{{cart_data.cart_total}}</small></span>
+                            <span>{% translate "total price" %}<small>{{cart_data.cart_total}}</small></span>
                         </button>
                     </div>
                 </div>
@@ -161,33 +161,30 @@
                         <div class="navbar-content">
                             <ul class="navbar-list">
                                 <li class="navbar-item">
-                                    <a class="navbar-link" href="/">home</a>
+                                    <a class="navbar-link" href="/">{% translate "Home" %}</a>
                                 </li>
                                 <li class="navbar-item dropdown-megamenu">
-                                    <a class="navbar-link" href="/products">shop</a>
+                                    <a class="navbar-link" href="/products">{% translate "Shop" %}</a>
                                 </li>
                                 <li class="navbar-item">
-                                    <a class="navbar-link" href="/products/brands/">brands</a>
+                                    <a class="navbar-link" href="/products/brands/">{% translate "Brands" %}</a>
                                 </li>
                                 <li class="navbar-item">
-                                    <a class="navbar-link" href="/orders">orders</a>
-                                </li>
-                                <li class="navbar-item">
-                                    <a class="navbar-link" href="/blogs">blog</a>
+                                    <a class="navbar-link" href="/orders">{% translate "Orders" %}</a>
                                 </li>
                             </ul>
                             <div class="navbar-info-group">
                                 <div class="navbar-info">
                                     <i class="icofont-ui-touch-phone"></i>
                                     <p>
-                                        <small>call us</small>
+                                        <small>{% translate "call us" %}</small>
                                         <span>{{company_data.call_us}}</span>
                                     </p>
                                 </div>
                                 <div class="navbar-info">
                                     <i class="icofont-ui-email"></i>
                                     <p>
-                                        <small>email us</small>
+                                        <small>{% translate "email us" %}</small>
                                         <span>{{company_data.email_us}}</span>
                                     </p>
                                 </div>
@@ -358,13 +355,13 @@
 
 
         <!--=====================================
-                  CART SIDEBAR PART START
+                CART SIDEBAR PART START
         =======================================-->
         <aside class="cart-sidebar">
             <div class="cart-header">
                 <div class="cart-total">
                     <i class="fas fa-shopping-basket"></i>
-                    <span>total item ({{cart_detail_data|length}})</span>
+                    <span>{% translate "total item" %} ({{cart_detail_data|length}})</span>
                 </div>
                 <button class="cart-close"><i class="icofont-close"></i></button>
             </div>
@@ -378,7 +375,7 @@
                     <div class="cart-info-group">
                         <div class="cart-info">
                             <h6><a href="product-single.html">{{item.product}}</a></h6>
-                            <p>Unit Price - {{item.product.price}} EP</p>
+                            <p>{% translate "Welcome to our page" %}Unit Price - {{item.product.price}} {% translate "Welcome to our page" %}EP</p>
                         </div>
                         <div class="cart-action-group">
                             <div class="product-action">
@@ -386,7 +383,7 @@
                                 <input class="action-input" title="Quantity Number" type="text" name="quantity" value="{{item.quantity}}">
                                 <button class="action-plus" title="Quantity Plus"><i class="icofont-plus"></i></button>
                             </div>
-                            <h6>{{item.total}} EP</h6>
+                            <h6>{{item.total}} {% translate "EP" %}</h6>
                         </div>
                     </div>
                 </li> 
@@ -395,7 +392,7 @@
             <div class="cart-footer">
 
                 <a class="cart-checkout-btn" href="checkout.html">
-                    <span class="checkout-label">Proceed to Checkout</span>
+                    <span class="checkout-label">{% translate "Proceed to Checkout" %}</span>
                     <span class="checkout-price">{{cart_data.cart_total}}</span>
                 </a>
             </div>
@@ -406,7 +403,7 @@
 
 
         <!--=====================================
-                  NAV SIDEBAR PART START
+                NAV SIDEBAR PART START
         =======================================-->
         <aside class="nav-sidebar">
             <div class="nav-header">
@@ -417,7 +414,7 @@
                 <div class="nav-btn">
                     <a href="login.html" class="btn btn-inline">
                         <i class="fa fa-unlock-alt"></i>
-                        <span>join here</span>
+                        <span>{% translate "join here" %}</span>
                     </a>
                 </div>
                 <!-- This commentable code show when user login or register -->
@@ -430,18 +427,8 @@
                         <i class="icofont-world"></i>
                         <select class="select">
                             <option value="english" selected>English</option>
-                            <option value="bangali">Bangali</option>
                             <option value="arabic">Arabic</option>
                         </select>
-                    </div>
-                    <div class="nav-select">
-                        <i class="icofont-money"></i>
-                        <select class="select">
-                            <option value="english" selected>Doller</option>
-                            <option value="bangali">Pound</option>
-                            <option value="arabic">Taka</option>
-                        </select>
-                    </div>
                 </div>
                 <ul class="nav-list">
                     <li>
@@ -496,13 +483,6 @@
                         </ul>
                     </li>
                     <li>
-                        <a class="nav-link dropdown-link" href="#"><i class="icofont-book-alt"></i>blogs</a>
-                        <ul class="dropdown-list">
-                            <li><a href="blog-grid.html">blog grid</a></li>
-                            <li><a href="blog-standard.html">blog standard</a></li>
-                            <li><a href="blog-details.html">blog details</a></li>
-                            <li><a href="blog-author.html">blog author</a></li>
-                        </ul>
                     </li>
                     <li><a class="nav-link" href="offer.html"><i class="icofont-sale-discount"></i>offers</a></li>
                     <li><a class="nav-link" href="about.html"><i class="icofont-info-circle"></i>about us</a></li>
@@ -535,7 +515,7 @@
             </div>
         </aside>
         <!--=====================================
-                  NAV SIDEBAR PART END
+                NAV SIDEBAR PART END
         =======================================-->
 
 
@@ -575,16 +555,19 @@
         <!--=====================================
                     PRODUCT VIEW START
         =======================================-->
-        <div class="modal fade" id="product-view">
+
+
+        {% comment %} <div class="modal fade" id="product-view">
             <div class="modal-dialog"> 
                 <div class="modal-content">
                     <button class="modal-close icofont-close" data-bs-dismiss="modal"></button>
+                    {% for object in cart_detail %} 
                     <div class="product-view">
                         <div class="row">
                             <div class="col-md-6 col-lg-6">
                                 <div class="view-gallery">
                                     <div class="view-label-group">
-                                        <label class="view-label new">new</label>
+                                        <label class="view-label new">{{object.product.flag}}</label>
                                         <label class="view-label off">-10%</label>
                                     </div>
                                     <ul class="preview-slider slider-arrow"> 
@@ -610,11 +593,11 @@
                             <div class="col-md-6 col-lg-6">
                                 <div class="view-details">
                                     <h3 class="view-name">
-                                        <a href="product-video.html">existing product name</a>
+                                        <a href="product-video.html">{{object.product}}</a>
                                     </h3>
                                     <div class="view-meta">
-                                        <p>SKU:<span>1234567</span></p>
-                                        <p>BRAND:<a href="#">radhuni</a></p>
+                                        <p>SKU:<span>{{object.product.sku}}</span></p>
+                                        <p>BRAND:<a href="#">{{object.product.brand}}</a></p>
                                     </div>
                                     <div class="view-rating">
                                         <i class="active icofont-star"></i>
@@ -622,13 +605,12 @@
                                         <i class="active icofont-star"></i>
                                         <i class="active icofont-star"></i>
                                         <i class="icofont-star"></i>
-                                        <a href="product-video.html">(3 reviews)</a>
+                                        <a href="#">({{reviews|length}} reviews)</a>
                                     </div>
                                     <h3 class="view-price">
-                                        <del>$38.00</del>
-                                        <span>$24.00<small>/per kilo</small></span>
+                                        <del>{{object.price}} EP</del>
                                     </h3>
-                                    <p class="view-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit non tempora magni repudiandae sint suscipit tempore quis maxime explicabo veniam eos reprehenderit fuga</p>
+                                    <p class="view-desc">{{object.subtitle}}</p>
                                     <div class="view-list-group">
                                         <label class="view-list-title">tags:</label>
                                         <ul class="view-tag-list">
@@ -671,9 +653,12 @@
                             </div>
                         </div>
                     </div>
+                    {% endfor %}  {% endcomment %}
                 </div> 
             </div> 
         </div>
+
+        
         <!--=====================================
                     PRODUCT VIEW END
         =======================================-->
