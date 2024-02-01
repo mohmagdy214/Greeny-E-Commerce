@@ -557,11 +557,11 @@
         =======================================-->
 
 
-        {% comment %} <div class="modal fade" id="product-view">
+        {% comment %} {% for object in cart_detail %} 
+        <div class="modal fade" id="product-view">
             <div class="modal-dialog"> 
                 <div class="modal-content">
                     <button class="modal-close icofont-close" data-bs-dismiss="modal"></button>
-                    {% for object in cart_detail %} 
                     <div class="product-view">
                         <div class="row">
                             <div class="col-md-6 col-lg-6">
@@ -653,10 +653,10 @@
                             </div>
                         </div>
                     </div>
-                    {% endfor %}  {% endcomment %}
                 </div> 
             </div> 
         </div>
+        {% endfor %} {% endcomment %}
 
         
         <!--=====================================
