@@ -30,10 +30,16 @@ def add_to_cart(request):
 
 
 
+def remove_from_cart(request,product_id):
+    cart_detail = CartDetail.objects.get(id=product_id)
+    cart_detail.delete()
+    return redirect('/products/')
+
+
+
 @login_required 
 def checkout(request):
     cart = Cart.objects.get(user=request.user, status='Inprogress')
     cart_detail = CartDetail.objects.filter(cart=cart)
-    
     return render(request,'orders/checkout.html',{'cart_detail':cart_detail})
 
