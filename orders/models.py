@@ -23,7 +23,7 @@ class Cart(models.Model):
     def cart_total(self):
         total = 0
         for item in self.cart_detail.all():
-            total += item.total
+            total += item.total 
             
         return round(total,2)
 
