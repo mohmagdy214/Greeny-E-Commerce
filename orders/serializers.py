@@ -1,11 +1,10 @@
 from rest_framework import serializers
 from .models import Cart, CartDetail, Order, OrderDetail
-# from product.serializers import ProductDetailSerializer
+from product.serializers import ProductCartDetailSerializer
 
 
 class CartDetailSerializer(serializers.ModelSerializer):
-    # product = ProductDetailSerializer()
-    product = serializers.StringRelatedField()
+    product = ProductCartDetailSerializer()
     class Meta:
         model = CartDetail
         fields = '__all__'
